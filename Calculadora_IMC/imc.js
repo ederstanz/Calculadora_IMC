@@ -1,6 +1,6 @@
-const calcular = document.getElementById('calcular');
+const botaoCalcular = document.getElementById('calcular');
 
-calcular.addEventListener('click',imc)
+botaoCalcular.addEventListener('click',imc)
 
 function imc () {
     
@@ -11,21 +11,21 @@ function imc () {
 
     if (nome !== '' && altura !== '' && peso !== '') {
         
-        const valorImc = (peso / (altura * altura)).toFixed(1);
+        const valorImc = ((peso / (altura * altura))*10000).toFixed(1);
         let classificacao = '';
 
         if (valorImc < 18.5){
 
             classificacao = 'abaixo do peso';
-        }else if (valorImc < 24.9) {
+        } else if (valorImc < 24.9) {
             classificacao = 'no seu peso ideal';
-        }else if (valorImc < 29.9) {
+        } else if (valorImc < 29.9) {
             classificacao = 'com sobrepeso';
-        }else if (valorImc < 34.9) {
+        } else if (valorImc < 34.9) {
             classificacao = 'com obesidade grau I';
-        }else if (valorImc < 40) {
+        } else if (valorImc < 40) {
             classificacao = 'com obesidade grau II';
-        }else {
+        } else {
             classificacao = 'com obesidade grau III';
         }
 
